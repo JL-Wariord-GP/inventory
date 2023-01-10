@@ -8,12 +8,12 @@ import AddProduct from '../pages/AddProduct'
 const Products = ({setMenu}) => {
 
  
-  const sideMenu = document.querySelector("aside");
 
   const handleBtnMenuClick = () => {
-    setMenu(sideMenu.classList = 'block')
-  
+    setMenu('block')
   }
+
+
 
   return (
     <div className="right">

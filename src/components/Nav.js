@@ -9,12 +9,14 @@ import { useState } from 'react'
 
 const Nav = () => {
 
-    const [menu, setMenu] = useState('none')
-
-
+    const [menu, setMenu] = useState('')
+    const handleBtnMenuClickClose = () => {
+        setMenu('none')
+      }
+   
     return (
         <div className="container">
-            <aside className={menu}>
+            <aside style={{display: `${menu} `}} className='aside-menu'>
                 {
                     //! ASIDE
                 }
@@ -22,8 +24,8 @@ const Nav = () => {
                     <div className="logo">
                         <img src={logo} alt="Logo" />
                         <h2 className="text-muted">EGA<span className="danger">TOR</span></h2>
-                        <div className="close" id="close-btn">
-                            <i className='bx bx-x-circle'></i>
+                        <div onClick={handleBtnMenuClickClose} className="close" id="close-btn">
+                            <span className="material-icons-sharp">close</span>
                         </div>
                     </div>
                 </div>

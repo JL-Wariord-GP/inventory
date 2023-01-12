@@ -8,11 +8,21 @@ import AddProduct from '../pages/AddProduct'
 const Products = ({setMenu}) => {
 
  
-  const sideMenu = document.querySelector("aside");
 
   const handleBtnMenuClick = () => {
-    setMenu(sideMenu.classList = 'block')
-  
+    setMenu('block')
+
+  }
+  const body = document.body;
+  //const themeToggler = document.querySelector(".theme-toggler");
+  const handleTheme = () => {
+    if(localStorage) {
+      body.classList.add('dark-theme-var')
+     // themeToggler.querySelector('span:nth-child(1)').classList.toggle('active');
+     // themeToggler.querySelector('span:nth-child(2)').classList.toggle('active');
+    } else {
+     return body.classList.replace('none')
+    }
   }
 
   return (
@@ -21,7 +31,7 @@ const Products = ({setMenu}) => {
         <button onClick={handleBtnMenuClick} id="menu-btn">
           <span className="material-icons-sharp">menu</span>
         </button>
-        <div className="theme-toggler">
+        <div onClick={handleTheme} className="theme-toggler">
           <span className="material-icons-sharp active">light_mode</span>
           <span className="material-icons-sharp">dark_mode</span>
         </div>

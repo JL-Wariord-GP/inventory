@@ -25,6 +25,8 @@ const Products = ({setMenu}) => {
     }
   }
 
+
+
   return (
     <div className="right">
       <div className="top">

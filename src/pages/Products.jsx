@@ -1,4 +1,5 @@
 import React from 'react'
+import { useState } from 'react'
 import profile1 from '../img/profile-1.jpg'
 import profile2 from '../img/profile-2.jpg'
 import profile3 from '../img/profile-3.jpg'
@@ -7,24 +8,40 @@ import AddProduct from '../pages/AddProduct'
 
 const Products = ({setMenu}) => {
 
- 
+const body = document.body;
+ const [theme, setTheme] = useState('dark-theme-var' ? 'none' : 'dark-theme-var')
+ const [lightMode, setLightMode] = useState('')
+ const [darkMode, setDarkMode] = useState('')
 
   const handleBtnMenuClick = () => {
     setMenu('block')
 
   }
-  const body = document.body;
-  //const themeToggler = document.querySelector(".theme-toggler");
-  const handleTheme = () => {
-    if(localStorage) {
-      body.classList.add('dark-theme-var')
-     // themeToggler.querySelector('span:nth-child(1)').classList.toggle('active');
-     // themeToggler.querySelector('span:nth-child(2)').classList.toggle('active');
-    } else {
-     return body.classList.replace('none')
-    }
-  }
 
+const handleTheme = () => {
+  const newTheme = theme === body.classList.add('dark-theme-var')  ? '' :  body.classList.remove('dark-theme-var')
+  setTheme(newTheme) ? setLightMode('active') : '' ? setDarkMode('active') : setLightMode('active')
+
+ }
+
+ console.log(theme);
+
+ // const handleTheme2 = () => {
+ //   const body = document.body;
+ //   const themeToggler = document.querySelector(".theme-toggler");
+ ////   switch (localStorage) {
+ //     case 'Theme1':
+ ///       body.classList.add('dark-theme-var')
+ ////       themeToggler.querySelector('span:nth-child(1)').classList.toggle('active');
+  //      break;
+
+//
+ //     default:     
+  //    themeToggler.querySelector('span:nth-child(2)').classList.toggle('active');
+  //    body.classList.remove('.dark-theme-var')
+///        break;
+ //   }
+//  }
 
 
   return (
@@ -34,8 +51,8 @@ const Products = ({setMenu}) => {
           <span className="material-icons-sharp">menu</span>
         </button>
         <div onClick={handleTheme} className="theme-toggler">
-          <span className="material-icons-sharp active">light_mode</span>
-          <span className="material-icons-sharp">dark_mode</span>
+          <span className={`material-icons-sharp ${!lightMode}`} >light_mode</span>
+          <span className={`material-icons-sharp ${!darkMode}`}>dark_mode</span>
         </div>
         <div className="profile">
           <div className="info">

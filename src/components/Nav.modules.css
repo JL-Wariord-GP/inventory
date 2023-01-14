@@ -62,7 +62,9 @@ body {
     color: var(--color-dark);
 }
 
-.container {
+
+
+.container, .box-dashboard {
     display: grid;
     width: 96%;
     margin: 0;
@@ -557,7 +559,7 @@ main .recent-orders a {
 /*! ========== MEDIA QUERIES ==========*/
 
 @media screen and (max-width: 1200px) {
-    .container {
+    .box-dashboard {
         width: 94%;
         grid-template-columns: 7rem auto 23rem;
     }
@@ -612,7 +614,7 @@ main .recent-orders a {
 
 @media screen and (max-width: 768px) {
 
-    .container {
+    .box-dashboard {
         width: 100%;
         grid-template-columns: 1fr;
     }

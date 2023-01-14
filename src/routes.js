@@ -1,8 +1,8 @@
 import { Navigate, useRoutes } from "react-router-dom";
 import DashboardLayout from './Layouts/DashboardLayout'
 import Dashboard from './pages/Dashboard'
+import AddProduct from './pages/AddProduct'
 import Products from "./pages/Products";
-import Users from "./pages/Users";
 import Settings from "./pages/Settings";
 import PublicRoutesLayout from "./Layouts/PublicRoutesLayout";
 import Login from "./pages/Login";
@@ -17,8 +17,8 @@ export default function Router() {
             children: [
                 { path: "dashboard", element: <Dashboard /> },
                 { path: "products", element: <Products /> },
-                { path: "users", element: <Users /> },
-                { path: "settings", element: <Settings /> },
+                { path: "addProduct", element: <AddProduct /> },
+                { path: "settings", element: <Settings /> }
             ],
         },
         {
